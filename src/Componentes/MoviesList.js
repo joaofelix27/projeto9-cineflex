@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import Header from './Header'
 
-export default function ListaFilmes() {
+export default function MoviesList() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ export default function ListaFilmes() {
                 {
                     movies.map((movie, index) =>
                         <Link to={`/sessoes/${movie.id}`}>
-                            <div className='movie'>
+                            <div keỳ={index} className='movie'>
                                 <img className='moviePicture' src={movie.posterURL} />
                             </div>
                         </Link>

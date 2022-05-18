@@ -19,6 +19,7 @@ export default function Filme() {
     });
     
   }, []);
+  console.log(movie)
   return (
     <>
       <Header />
