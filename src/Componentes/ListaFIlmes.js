@@ -1,31 +1,30 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import Header from './Header'
 
 export default function ListaFilmes() {
-    const [filmes, setFilmes] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const requisicao = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
 
         requisicao.then(resposta => {
-            setFilmes(resposta.data);
+            setMovies(resposta.data);
         });
     }, []);
-    console.log(filmes);
+    console.log(movies);
     return (
         <>
-            <header>
-                CINEFLEX
-            </header>
-            <section className="escolherFilme">
-                Selecione o filme
-            </section>
+            <Header/>
             <section className='movieContainer'>
                 {
-                    filmes.map((value, index) =>
-                        <div className='movie'>
-                            <img className='moviePicture' src={value.posterURL} />
-                        </div>
+                    movies.map((movie, index) =>
+                        <Link to={`/sessoes/${movie.id}`}>
+                            <div className='movie'>
+                                <img className='moviePicture' src={movie.posterURL} />
+                            </div>
+                        </Link>
                     )
                 }
             </section>
