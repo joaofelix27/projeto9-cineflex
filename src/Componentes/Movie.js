@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Header from './Header'
+import Showtimes from './Showtimes'
 import Footer from './Footer'
 
-export default function Filme() {
+export default function Movie() {
   const { idMovie } = useParams();
 
   const [movie, setMovie] = useState({});
@@ -23,6 +24,7 @@ export default function Filme() {
   return (
     <>
       <Header />
+      <Showtimes movie={movie} />
       <Footer title={movie.title} posterURL={movie.posterURL} />
     </>
   )
