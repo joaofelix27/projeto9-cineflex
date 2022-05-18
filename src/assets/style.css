@@ -26,6 +26,7 @@ header {
     color: #E8833A;
 
 }
+
 .escolherFilme {
     height: 110px;
     width: 100%;
@@ -39,4 +40,27 @@ header {
     letter-spacing: 0.04em;
     color: #293845;
 
+}
+.movieContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.movie {
+    height: 209px;
+    width: 145px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px 2px #0000001A;
+    padding: 8px;
+    margin-right: 30px;
+}
+
+.moviePicture {
+    object-fit: cover;
+    height: 193px;
+    width: 129px;
+    border-radius: 0px;
 }
