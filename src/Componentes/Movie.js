@@ -24,7 +24,7 @@ export default function Movie() {
   return (
     <>
       <Header />
-      <Showtimes movie={movie} />
+      <Showtimes days={movie.days} />
       <Footer title={movie.title} posterURL={movie.posterURL} />
     </>
   )

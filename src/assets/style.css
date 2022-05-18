@@ -75,7 +75,7 @@ footer {
     bottom: 0px;
     display: flex;
     align-items: center;
-    
+
 }
 
 footer h1 {
@@ -103,6 +103,41 @@ footer h1 {
     height: 72px;
     width: 48px;
 }
-.containerShowtimes{
-    width: 100px;
+
+.containerShowtimes {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.datas h1 {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.containerHorarios {
+    display: flex;
+    margin-top: 22px ;
+
+}
+
+.horarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 43px;
+    width: 83px;
+    border-radius: 3px;
+    background-color: #E8833A;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-right: 9px;
 }
