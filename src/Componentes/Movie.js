@@ -9,6 +9,7 @@ export default function Movie() {
   const { idMovie } = useParams();
 
   const [movie, setMovie] = useState({});
+  const [carregando, setCarregando] = useState(true);
   
   useEffect(() => {
     const requisicao = axios.get(
@@ -17,14 +18,16 @@ export default function Movie() {
 
     requisicao.then((resposta) => {
       setMovie(resposta.data);
+      setCarregando(false);
     });
     
   }, []);
   console.log(movie)
+
   return (
     <>
       <Header />
-      <Showtimes days={movie.days} />
+       {carregando ==false ? <Showtimes days={movie.days} /> : "Carregando"}
       <Footer title={movie.title} posterURL={movie.posterURL} />
     </>
   )

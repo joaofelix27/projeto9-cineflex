@@ -103,6 +103,9 @@ footer h1 {
     height: 72px;
     width: 48px;
 }
+.showtimePage{
+    margin-bottom: 120px;
+}
 
 .containerShowtimes {
     width: 100%;

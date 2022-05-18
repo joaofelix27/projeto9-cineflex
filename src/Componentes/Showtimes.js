@@ -1,32 +1,25 @@
 export default function Showtimes({ days }) {
     console.log(days)
-    const data = { ...days }
     return (
-        <>
-            <div className="containerShowtimes">
-                <div className="datas">
-                    <h1>Quinta-feira - 24/06/2021</h1>
-                    <div className="containerHorarios">
-                        <div className="horarios">
-                            15:00
-                        </div>
-                        <div className="horarios">
-                            19:00
+        <section className="showtimePage">
+            {
+                days.map((day, index) =>
+                    <div className="containerShowtimes">
+                        <div className="datas">
+                            <h1>{`${day.weekday} - ${day.date}`}</h1>
+                            <div className="containerHorarios">
+                                {day.showtimes.map((showtime, index) =>
+                                    <div className="horarios">
+                                        {showtime.name}
+                                    </div>
+                                )
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            {/* <section>
-        {
-                days.map((value, index) =>
-                        <div key={index} className="containerShowtimes">
-                            <h1>EAE</h1>
-                        </div>
                 )
             }
 
-        </section> */}
-
-        </>
+       </section>
     )
 }
