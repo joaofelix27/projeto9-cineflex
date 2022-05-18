@@ -13,7 +13,6 @@ export default function ListaFilmes() {
             setMovies(resposta.data);
         });
     }, []);
-    console.log(movies);
     return (
         <>
             <Header/>

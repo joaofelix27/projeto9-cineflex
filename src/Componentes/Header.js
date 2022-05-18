@@ -7,7 +7,6 @@ export default function Header() {
             <section className="escolherFilme">
                 Selecione o filme
             </section>
-            )
         </>
     )
 }
