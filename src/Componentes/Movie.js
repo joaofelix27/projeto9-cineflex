@@ -22,8 +22,6 @@ export default function Movie() {
     });
     
   }, []);
-  console.log(movie)
-
   return (
     <>
       <Header />
