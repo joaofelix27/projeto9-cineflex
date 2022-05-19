@@ -103,7 +103,8 @@ footer h1 {
     height: 72px;
     width: 48px;
 }
-.showtimePage{
+
+.showtimePage {
     margin-bottom: 120px;
 }
 
@@ -123,7 +124,7 @@ footer h1 {
 
 .containerHorarios {
     display: flex;
-    margin-top: 22px ;
+    margin-top: 22px;
 
 }
 
@@ -143,4 +144,51 @@ footer h1 {
     letter-spacing: 0.02em;
     text-align: center;
     margin-right: 9px;
+}
+
+.seatsContainer {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 17px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.false {
+    height: 26px;
+    width: 26px;
+    border-radius: 12px;
+    border: 1px solid #808F9D;
+    background-color: #C3CFD9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #000000;
+    margin-right: 7px;
+    margin-bottom: 16px;
+}
+.true {
+    height: 26px;
+    width: 26px;
+    border-radius: 12px;
+    border: 1px solid #F7C52B;
+    background-color: #FBE192;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #000000;
+    margin-right: 7px;
+    margin-bottom: 16px;
 }
