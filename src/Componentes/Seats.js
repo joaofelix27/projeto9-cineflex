@@ -6,15 +6,13 @@ import SeatsBody from "./SeatsBody";
 import Footer from './Footer'
 import Sucesso from "./Sucesso";
 
-export default function Seats (){
+export default function Seats ({setCarregando2,carregando2}){
     const { idSeats } = useParams();
 
   const [seats, setSeats] = useState({});
   const [carregando1, setCarregando1] = useState(true);
-  const [carregando2, setCarregando2] = useState(true);
   const [arrayID, setArrayID] = useState([]);
   const [arrayName, setArrayName] = useState([]);
-  console.log(carregando2)
   console.log(arrayID)
   useEffect(() => {
     const requisicao = axios.get(

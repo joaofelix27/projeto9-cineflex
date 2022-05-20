@@ -70,9 +70,9 @@ export default function SeatsBody({ seats , setArrayName , setArrayID,setCarrega
                     <label htmlFor="campoCPF">CPF do comprador:</label>
                     <input type="text" id="campoCPF" placeholder="Digite seu CPF..." />
                 </div>
-                {/* <Link to={`/sucesso`}> */}
+                <Link to={`/sucesso`}>
                     <button className="bookSeats" onClick={() => validar(seats1)} type="submit">Reservar Assentos</button>
-                {/* </Link> */}
+                </Link>
             </div>
         </div>
     )
