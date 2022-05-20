@@ -18,6 +18,7 @@ function validar(seats1) {
         name: "ernesto",
         cpf: "07161334403"
     }
+    console.log(dados)
     const requisicao = axios.post(
         `https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`, dados
     );
@@ -32,12 +33,12 @@ export default function SeatsBody({ seats }) {
     const [seats1, setSeats1] = useState(seats.seats)
     function zap(cardIndex) {
         let seatsStatus = [...seats1]
-        if (seatsStatus[cardIndex].isAvailable == true) {
+        if (seatsStatus[cardIndex].isAvailable == false) {
             alert("Esse assento não está disponível")
             return;
         }
         if (seatsStatus[cardIndex].isAvailable == `selecionado1`) {
-            seatsStatus[cardIndex].isAvailable = false
+            seatsStatus[cardIndex].isAvailable = true
         } else { seatsStatus[cardIndex].isAvailable = `selecionado1` }
         setSeats1([...seatsStatus])
     }

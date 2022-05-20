@@ -3,7 +3,6 @@ import Header from "./Header";
 export default function Sucesso() {
     return (
         <>
-            <Header text="Pedido feito com sucesso!"></Header>
             <section className="containerSucess">
                 <div className="sucess">
                     <h1>Filme e sessão</h1>

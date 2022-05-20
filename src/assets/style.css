@@ -154,7 +154,7 @@ footer h1 {
     flex-wrap: wrap;
 }
 
-.false {
+.true {
     height: 26px;
     width: 26px;
     border-radius: 12px;
@@ -174,7 +174,7 @@ footer h1 {
     margin-bottom: 16px;
 }
 
-.true {
+.false {
     height: 26px;
     width: 26px;
     border-radius: 12px;
@@ -194,7 +194,7 @@ footer h1 {
     margin-bottom: 16px;
 }
 
-.false1 {
+.true1 {
     height: 26px;
     width: 26px;
     border-radius: 12px;
@@ -213,7 +213,7 @@ footer h1 {
     margin-bottom: 8px;
 }
 
-.true1 {
+.false1 {
     height: 26px;
     width: 26px;
     border-radius: 12px;
