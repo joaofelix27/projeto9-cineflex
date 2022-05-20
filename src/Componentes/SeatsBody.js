@@ -2,26 +2,27 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 function validar(seats1) {
-    const array = []
+    const array = [1, 2, 3]
     console.log(seats1)
-    for (let i = 0; i < seats1.length; i++) {
-        if (seats1[i].isAvailable == `selecionado1`) {
-            array.push(seats1[i].id)
-        }
-    }
+    // for (let i = 0; i < seats1.length; i++) {
+    //     if (seats1[i].isAvailable == `selecionado1`) {
+    //         array.push(seats1[i].id)
+    //     }
+    // }
     console.log(array)
-    const dados = { ids : array,
-        name : "ernesto",
+    const dados = {
+        ids: array,
+        name: "ernesto",
         cpf: "07161334403"
     }
     const requisicao = axios.post(
-        `https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`,dados
-      );
-      requisicao.then((resposta) => {
-          console.log(resposta)
-      });
-   
-    
+        `https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`, dados
+    );
+    requisicao.then((resposta) => {
+        console.log(resposta)
+    });
+
+
 }
 export default function SeatsBody({ seats }) {
     const [selecionado, setSelecionado] = useState(false)
@@ -60,13 +61,17 @@ export default function SeatsBody({ seats }) {
                 </div>
 
             </div>
-            <label htmlFor="campoNome">Nome do comprador:</label>
-            <input type="text" id="campoNome" placeholder="Digite seu nome..." /> 
-            <label htmlFor="campoCPF">CPF do comprador:</label>
-            <input type="text" id="campoCPF" placeholder="Digite seu CPF..." /> 
-            <Link to={`/sucesso`}>
-                <button onClick={() =>validar(seats1)} type="submit">Reservar Assentos</button>
+            <div className="containerInputs">
+                <div>
+                    <label htmlFor="campoNome">Nome do comprador:</label>
+                    <input type="text" id="campoNome" placeholder="Digite seu nome..." />
+                    <label htmlFor="campoCPF">CPF do comprador:</label>
+                    <input type="text" id="campoCPF" placeholder="Digite seu CPF..." />
+                </div>
+                <Link to={`/sucesso`}>
+                    <button className="bookSeats" onClick={() => validar(seats1)} type="submit">Reservar Assentos</button>
                 </Link>
+            </div>
         </div>
     )
 

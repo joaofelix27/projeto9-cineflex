@@ -15,7 +15,7 @@ export default function MoviesList() {
     }, []);
     return (
         <>
-            <Header/>
+            <Header text="Selecione o filme"/>
             <section className='movieContainer'>
                 {
                     movies.map((movie, index) =>

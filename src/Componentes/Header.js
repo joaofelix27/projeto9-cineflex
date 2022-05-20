@@ -1,11 +1,11 @@
-export default function Header() {
+export default function Header({text}) {
     return (
         <>
             <header>
                 CINEFLEX
             </header>
             <section className="escolherFilme">
-                Selecione o filme
+                {text}
             </section>
         </>
     )

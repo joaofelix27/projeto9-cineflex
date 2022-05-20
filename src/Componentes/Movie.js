@@ -24,7 +24,7 @@ export default function Movie() {
   }, []);
   return (
     <>
-      <Header />
+      <Header text="Selecione o horário"/>
        {carregando ==false ? <Showtimes days={movie.days} /> : "Carregando"}
       <Footer title={movie.title} posterURL={movie.posterURL} />
     </>

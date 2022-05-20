@@ -193,6 +193,7 @@ footer h1 {
     margin-right: 7px;
     margin-bottom: 16px;
 }
+
 .false1 {
     height: 26px;
     width: 26px;
@@ -230,6 +231,7 @@ footer h1 {
     color: #000000;
     margin-bottom: 8px;
 }
+
 .selecionado {
     height: 26px;
     width: 26px;
@@ -248,6 +250,7 @@ footer h1 {
     color: #000000;
     margin-bottom: 8px;
 }
+
 .selecionado1 {
     height: 26px;
     width: 26px;
@@ -264,7 +267,7 @@ footer h1 {
     letter-spacing: 0.04em;
     text-align: center;
     color: #000000;
-    margin-right: 7px;  
+    margin-right: 7px;
     margin-bottom: 8px;
 }
 
@@ -276,6 +279,7 @@ footer h1 {
     justify-content: space-around;
     align-items: center;
 }
+
 .legenda>div {
     display: flex;
     width: 90px;
@@ -291,4 +295,60 @@ footer h1 {
     line-height: 15px;
     letter-spacing: -0.013em;
     color: #4E5A65;
+}
+
+.containerInputs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 51px;
+    width: 327px;
+    border-radius: 3px;
+    border: 1px solid #D4D4D4;
+    background-color: #FFFFFF;
+    margin-bottom: 7px;
+    padding-left: 18px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #293845;
+
+}
+
+::placeholder {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.bookSeats {
+    margin-top: 15px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    height: 42px;
+    width: 225px;
+    background-color: #E8833A;
+    color: #fafafa;
+    border: 0px;
 }

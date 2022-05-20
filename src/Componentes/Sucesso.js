@@ -2,6 +2,6 @@ import Header from "./Header";
 
 export default function Sucesso (){
     return (
-        <Header></Header>
+        <Header text="Pedido feito com sucesso!"></Header>
     )
 }

@@ -26,7 +26,7 @@ export default function Seats (){
 
   return (
     <>
-      <Header />
+      <Header text="Selecione o(s) assento(s)"/>
       {carregando1 ==false ? <SeatsBody seats={seats}/> : "Carregando"}
       {carregando1 ==false ? <Footer title={seats.movie.title} day={seats.day.weekday} date={seats.name} posterURL={seats.movie.posterURL} /> : "Carregando"}
     </>
