@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
+import axios from "axios";
 function validar(seats1) {
     const array = []
     console.log(seats1)
@@ -8,11 +9,20 @@ function validar(seats1) {
             array.push(seats1[i].id)
         }
     }
-    return array
+    console.log(array)
+    const dados = { ids : array,
+        name : "ernesto",
+        cpf: "07161334403"
+    }
+    const requisicao = axios.post(
+        `https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`,dados
+      );
+      requisicao.then((resposta) => {
+          console.log(resposta)
+      });
+   
+    
 }
- function reservar (event) {
-     
- }
 export default function SeatsBody({ seats }) {
     const [selecionado, setSelecionado] = useState(false)
     const [seats1, setSeats1] = useState(seats.seats)
@@ -50,11 +60,13 @@ export default function SeatsBody({ seats }) {
                 </div>
 
             </div>
-            <form onSubmit={() =>validar(seats1)}>
-                <input type="email"  />
-                <input type="password"  />
-                <button type="submit">Reservar Assentos</button>
-            </form>
+            <label htmlFor="campoNome">Nome do comprador:</label>
+            <input type="text" id="campoNome" placeholder="Digite seu nome..." /> 
+            <label htmlFor="campoCPF">CPF do comprador:</label>
+            <input type="text" id="campoCPF" placeholder="Digite seu CPF..." /> 
+            <Link to={`/sucesso`}>
+                <button onClick={() =>validar(seats1)} type="submit">Reservar Assentos</button>
+                </Link>
         </div>
     )
 
