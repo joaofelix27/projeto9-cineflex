@@ -352,3 +352,46 @@ label {
     color: #fafafa;
     border: 0px;
 }
+
+.sucess {
+    display: flex;
+    margin-bottom: 40px;
+    height: 80px;
+}
+
+.sucess h1 {
+
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: #293845;
+
+}
+
+.containerSucess {
+    padding: 0 24px;
+}
+
+.return {
+    margin-top: 50px;
+    height: 42px;
+    width: 225px;
+    border-radius: 3px;
+    border: 0px;
+    background-color: #E8833A;
+    color: #fafafa;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+.returnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

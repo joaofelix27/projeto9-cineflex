@@ -2,16 +2,19 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 function validar(seats1) {
-    const array = [1, 2, 3]
+    const arrayID = []
+    const arrayName = []
     console.log(seats1)
-    // for (let i = 0; i < seats1.length; i++) {
-    //     if (seats1[i].isAvailable == `selecionado1`) {
-    //         array.push(seats1[i].id)
-    //     }
-    // }
-    console.log(array)
+    for (let i = 0; i < seats1.length; i++) {
+        if (seats1[i].isAvailable == `selecionado1`) {
+            arrayID.push(seats1[i].id)
+            arrayName.push(seats1[i].name)
+        }
+    }
+    console.log(arrayID)
+    console.log(arrayName)
     const dados = {
-        ids: array,
+        ids: arrayID,
         name: "ernesto",
         cpf: "07161334403"
     }
