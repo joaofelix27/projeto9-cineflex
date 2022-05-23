@@ -10,7 +10,7 @@ export default function Showtimes({ days }) {
                             <h1>{`${day.weekday} - ${day.date}`}</h1>
                             <div className="containerHorarios">
                                 {day.showtimes.map((showtime, index) =>
-                                <Link to={`/assentos/${showtime.id}`}>
+                                <Link  style={{textDecoration: 'none'}} to={`/assentos/${showtime.id}`}>
                                     <div className="horarios">
                                         {showtime.name}
                                     </div>

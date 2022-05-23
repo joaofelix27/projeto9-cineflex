@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-export default function SeatsBody({ seats , setArrayName , setArrayID,setCarregando2}) {
-    const [selecionado, setSelecionado] = useState(false)
+let validador
+export default function SeatsBody({ seats, setArrayName, setArrayID, setCarregando2, setOrder, order }) {
+    const [nome, setNome] = useState("")
+    const [cpf, setCpf] = useState("")
+    console.log(cpf)
     const [seats1, setSeats1] = useState(seats.seats)
     function zap(cardIndex) {
         let seatsStatus = [...seats1]
@@ -19,6 +21,7 @@ export default function SeatsBody({ seats , setArrayName , setArrayID,setCarrega
     function validar(seats1) {
         const auxID = []
         const auxName = []
+        validador=1
         for (let i = 0; i < seats1.length; i++) {
             if (seats1[i].isAvailable == `selecionado1`) {
                 auxID.push(seats1[i].id)
@@ -27,11 +30,16 @@ export default function SeatsBody({ seats , setArrayName , setArrayID,setCarrega
         }
         setArrayID(auxID)
         setArrayName(auxName)
+        setOrder({ ...order, seats: auxName ,nome:nome,cpf:cpf });
         const dados = {
             ids: auxID,
-            name: "ernesto",
-            cpf: "07161334403"
+            name: `${nome}`,
+            cpf: `${cpf}`
         }
+         if (nome=="" || cpf=="" || cpf.length!==11){
+            return;
+        }
+        console.log(dados)
         const requisicao = axios.post(
             `https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`, dados
         );
@@ -54,11 +62,11 @@ export default function SeatsBody({ seats , setArrayName , setArrayID,setCarrega
                     <h1>Selecionado</h1>
                 </div>
                 <div>
-                    <div className="false1"></div>
+                    <div className="true1"></div>
                     <h1>Disponível</h1>
                 </div>
                 <div>
-                    <div className="true1"></div>
+                    <div className="false1"></div>
                     <h1>Indisponível</h1>
                 </div>
 
@@ -66,12 +74,12 @@ export default function SeatsBody({ seats , setArrayName , setArrayID,setCarrega
             <div className="containerInputs">
                 <div>
                     <label htmlFor="campoNome">Nome do comprador:</label>
-                    <input type="text" id="campoNome" placeholder="Digite seu nome..." />
+                    <input type="text" id="campoNome" placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} required />
                     <label htmlFor="campoCPF">CPF do comprador:</label>
-                    <input type="text" id="campoCPF" placeholder="Digite seu CPF..." />
+                    <input type="number" id="campoCPF"  placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} required />
                 </div>
-                <Link to={`/sucesso`}>
-                    <button className="bookSeats" onClick={() => validar(seats1)} type="submit">Reservar Assentos</button>
+                <Link to={validador ==1 ? `/sucesso` : `#`}>
+                    <button className="bookSeats" onClick={() => validar(seats1)} type="submit"  >Reservar Assento(s)</button>
                 </Link>
             </div>
         </div>

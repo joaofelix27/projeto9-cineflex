@@ -144,6 +144,7 @@ footer h1 {
     letter-spacing: 0.02em;
     text-align: center;
     margin-right: 9px;
+    text-decoration: no;
 }
 
 .seatsContainer {
@@ -356,7 +357,7 @@ label {
 .sucess {
     display: flex;
     flex-direction: column;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 40px;
     height: 80px;
 }
@@ -370,7 +371,17 @@ label {
     letter-spacing: 0.04em;
     text-align: left;
     color: #293845;
-
+    margin-bottom: 6px;
+}
+.sucess h2 {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: #293845;
+    margin-bottom: 3px;
 }
 
 .containerSucess {
@@ -392,8 +403,21 @@ label {
     letter-spacing: 0.04em;
     text-align: center;
 }
-.returnContainer{
+
+.returnContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.textSucesso {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #247A6B;
+
+
 }

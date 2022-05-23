@@ -6,7 +6,7 @@ import SeatsBody from "./SeatsBody";
 import Footer from './Footer'
 import Sucesso from "./Sucesso";
 
-export default function Seats ({setCarregando2,carregando2}){
+export default function Seats ({setCarregando2,carregando2,setOrder,order}){
     const { idSeats } = useParams();
 
   const [seats, setSeats] = useState({});
@@ -21,13 +21,17 @@ export default function Seats ({setCarregando2,carregando2}){
     requisicao.then((resposta) => {
       setSeats(resposta.data);
       setCarregando1(false);
+      setOrder({
+        movie: resposta.data.movie.title,
+        session: `${resposta.data.day.date} ${resposta.data.name}`,
+    });
     });
     
   }, []);
   return (
     <>
       <Header text="Selecione o(s) assento(s)"/>
-      {carregando1 ==true ?   "Carregando": carregando2==true ? <SeatsBody setCarregando2={setCarregando2} setArrayID={setArrayID} setArrayName={setArrayName} seats={seats}/> : <Sucesso Carregando={carregando2} seats={seats} ID={arrayID} Name={arrayName}/>}
+      {carregando1 ==false ?   <SeatsBody setOrder={setOrder} order={order} setCarregando2={setCarregando2} setArrayID={setArrayID} setArrayName={setArrayName} seats={seats}/> :false }
       {carregando1 ==false ? <Footer title={seats.movie.title} day={seats.day.weekday} date={seats.name} posterURL={seats.movie.posterURL} /> : "Carregando"}
     </>
   )
