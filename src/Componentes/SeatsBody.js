@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-let validador
+
 export default function SeatsBody({ seats, setArrayName, setArrayID, setCarregando2, setOrder, order }) {
     const [nome, setNome] = useState("")
     const [cpf, setCpf] = useState("")
@@ -21,7 +21,9 @@ export default function SeatsBody({ seats, setArrayName, setArrayID, setCarregan
     function validar(seats1) {
         const auxID = []
         const auxName = []
-        validador=1
+        if (nome=="" || cpf=="" || cpf.length!==11){
+            return;
+        }
         for (let i = 0; i < seats1.length; i++) {
             if (seats1[i].isAvailable == `selecionado1`) {
                 auxID.push(seats1[i].id)
@@ -35,9 +37,6 @@ export default function SeatsBody({ seats, setArrayName, setArrayID, setCarregan
             ids: auxID,
             name: `${nome}`,
             cpf: `${cpf}`
-        }
-         if (nome=="" || cpf=="" || cpf.length!==11){
-            return;
         }
         console.log(dados)
         const requisicao = axios.post(
@@ -76,9 +75,9 @@ export default function SeatsBody({ seats, setArrayName, setArrayID, setCarregan
                     <label htmlFor="campoNome">Nome do comprador:</label>
                     <input type="text" id="campoNome" placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} required />
                     <label htmlFor="campoCPF">CPF do comprador:</label>
-                    <input type="number" id="campoCPF"  placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} required />
+                    <input type="number" id="campoCPF" minLength="11" maxLength="11" placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} required />
                 </div>
-                <Link to={validador ==1 ? `/sucesso` : `#`}>
+                <Link to={ cpf.length==11 && nome.length>2 ?`/sucesso` : "#"}>
                     <button className="bookSeats" onClick={() => validar(seats1)} type="submit"  >Reservar Assento(s)</button>
                 </Link>
             </div>
